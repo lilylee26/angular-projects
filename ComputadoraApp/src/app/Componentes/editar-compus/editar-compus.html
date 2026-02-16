@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2>Editar computadoras</h2>
+        </div>
+        <div class="card-body">
+            <th>Modifica datos necesarios de la computadora</th>
+            <form>
+                <div class="form-group">
+                    <label for="idCompu">ID COMPU</label>
+                    <input type="number" name="idCompu" class="form-control"
+                        placeholder="Escribe el ID de la computadora" [(ngModel)]="compu.idComputadora">
+                    <!--NgModel es una directiva de tipo bidireccional, para formularios que nos permiten asociar valores
+                    de tipo input para un atributo de la entidad, ejemplo el id. Este inputo recibira un valoir de tipo
+                    numerico pero asociara que era el id, por el ngModel-->
+                </div>
+                <div class="form-group">
+                    <label for="marca">MARCA</label>
+                    <input type="text" name="marca" class="form-control"
+                        placeholder="Escribe la marca de la computadora" [(ngModel)]="compu.marca">
+                </div>
+                <div class="form-group">
+                    <label for="modelo">MODELO</label>
+                    <input type="text" name="modelo" class="form-control"
+                        placeholder="Escribe el modelo de la computadora" [(ngModel)]="compu.modelo">
+                </div>
+                <div class="form-group">
+                    <label for="ram">RAM</label>
+                    <input type="number" name="ram" class="form-control"
+                        placeholder="Escribe la ram de la computadora" [(ngModel)]="compu.ram">
+                </div>
+                <div class="form-group">
+                    <label for="procesador">PROCESADOR</label>
+                    <input type="text" name="procesador" class="form-control"
+                        placeholder="Escribe el procesador de la computadora" [(ngModel)]="compu.procesador">
+                </div>
+                <div class="form-group">
+                    <label for="precio">PRECIO</label>
+                    <input type="number" name="precio" class="form-control"
+                        placeholder="Escribe el precio de la computadora" [(ngModel)]="compu.precio">
+                </div>
+                <div>
+                    <button type="button" class="btn btn-success" (click)="editarDatos()">Guardar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
