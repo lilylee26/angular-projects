@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2>Lista de Roles</h2>
+      <div>
+        <button (click)="nuevo()">Nuevo</button>
+        <button (click)="irUsuarios()">Usuarios</button>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <table border="1" width="100%">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>PRIVILEGIO</th>
+            <th>ACCIONES</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let r of roles">
+            <td>{{ r.idRol }}</td>
+            <td>{{ r.privilegio }}</td>
+            <td>
+              <button (click)="editar(r.idRol)">Editar</button>
+              <button (click)="eliminar(r.idRol)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

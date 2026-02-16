@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2>Registrar Rol</h2>
+    </div>
+
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label>PRIVILEGIO</label>
+          <input type="text" name="privilegio" [(ngModel)]="rol.privilegio" placeholder="Ej: ADMIN">
+        </div>
+
+        <button type="button" (click)="guardar()">Guardar</button>
+        <button type="button" (click)="regresar()">Regresar</button>
+      </form>
+    </div>
+  </div>
+</div>

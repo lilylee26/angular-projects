@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Curso</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/listar-usuario">Usuarios</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/listar-rol">Roles</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+            Acciones
+          </a>
+
+          <div class="dropdown-menu">
+            <a class="dropdown-item" routerLink="/guardar-usuario">Guardar Usuario</a>
+            <a class="dropdown-item" routerLink="/guardar-rol">Guardar Rol</a>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br>
+
+
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2>Editar Rol</h2>
+    </div>
+
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label>PRIVILEGIO</label>
+          <input type="text" name="privilegio" [(ngModel)]="rol.privilegio" placeholder="Ej: SUPERVISOR">
+        </div>
+
+        <button type="button" (click)="editar()">Actualizar</button>
+        <button type="button" (click)="regresar()">Regresar</button>
+      </form>
+    </div>
+  </div>
+</div>
