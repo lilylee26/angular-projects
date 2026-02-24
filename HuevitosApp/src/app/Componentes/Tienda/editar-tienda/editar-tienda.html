@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2 class="mb-0">Editar Tienda</h2>
+      <small>Edita los datos de la tienda</small>
+    </div>
+
+    <div class="card-body">
+      <form (ngSubmit)="editar()">
+
+        <div class="mb-3">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-control"
+                 [(ngModel)]="tienda.nombre" name="nombre" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Teléfono</label>
+          <input type="number" class="form-control"
+                 [(ngModel)]="tienda.telefono" name="telefono" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="text" class="form-control"
+                 [(ngModel)]="tienda.email" name="email" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="button" class="btn btn-secondary ms-2" (click)="cancelar()">Cancelar</button>
+
+      </form>
+    </div>
+  </div>
+</div>
