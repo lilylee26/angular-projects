@@ -1,0 +1,70 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+
+      <div class="card shadow-sm">
+        <div class="card-header bg-dark text-white">
+          <h4 class="mb-0">Guardar Pedido</h4>
+          <small class="text-white-50">Ingresa los datos para registrar un pedido</small>
+        </div>
+
+        <div class="card-body">
+          <form (ngSubmit)="guardar()" #f="ngForm">
+
+            <div class="row g-3">
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">Cliente ID</label>
+                <input type="number" class="form-control" name="clienteId" [(ngModel)]="pedido.clienteId"
+                  placeholder="Ej: 1" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">Tienda ID</label>
+                <input type="number" class="form-control" name="tiendaId" [(ngModel)]="pedido.tiendaId"
+                  placeholder="Ej: 1" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">Fecha (yyyy-MM-dd)</label>
+                <input type="date" class="form-control" name="fechaPedido" [(ngModel)]="pedido.fechaPedido" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">Total</label>
+                <input type="number" class="form-control" name="total" [(ngModel)]="pedido.total"
+                  placeholder="Ej: 999.50" required />
+              </div>
+
+              <div class="col-12">
+                <label class="form-label">Estado</label>
+                <select class="form-control" name="estado" [(ngModel)]="pedido.estado" required>
+                  <option value="" disabled selected>Selecciona estado</option>
+                  @for (e of estados; track e) {
+                  <option [value]="e">{{e}}</option>
+                  }
+                </select>
+
+              </div>
+
+            </div>
+
+            <hr class="my-4">
+
+            <div class="d-flex gap-2 justify-content-end">
+              <button type="button" class="btn btn-outline-secondary" (click)="cancelar()">
+                Cancelar
+              </button>
+
+              <button type="submit" class="btn btn-primary" [disabled]="f.invalid">
+                Guardar
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

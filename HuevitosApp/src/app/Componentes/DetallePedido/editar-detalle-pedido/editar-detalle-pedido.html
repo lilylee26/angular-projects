@@ -1,0 +1,61 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+
+      <div class="card shadow-sm">
+        <div class="card-header bg-dark text-white">
+          <h4 class="mb-0">Editar Detalle Pedido</h4>
+          <small class="text-white-50">Actualiza los datos del detalle</small>
+        </div>
+
+        <div class="card-body">
+          <form (ngSubmit)="actualizar()" #f="ngForm">
+            <div class="row g-3">
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">ID Pedido</label>
+                <input type="number" class="form-control" name="idPedido" [(ngModel)]="detalle.idPedido" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">ID Producto</label>
+                <input type="number" class="form-control" name="idProducto" [(ngModel)]="detalle.idProducto" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">Cantidad</label>
+                <input type="number" class="form-control" name="cantidad" [(ngModel)]="detalle.cantidad" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">Precio Unitario</label>
+                <input type="number" class="form-control" name="precioUnitario" [(ngModel)]="detalle.precioUnitario"
+                  required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">Tienda ID</label>
+                <input type="number" class="form-control" name="tiendaId" [(ngModel)]="detalle.tiendaId" required />
+              </div>
+
+            </div>
+
+            <hr class="my-4">
+
+            <div class="d-flex gap-2 justify-content-end">
+              <button type="button" class="btn btn-outline-secondary" (click)="cancelar()">
+                Cancelar
+              </button>
+
+              <button type="submit" class="btn btn-primary" [disabled]="f.invalid">
+                Actualizar
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

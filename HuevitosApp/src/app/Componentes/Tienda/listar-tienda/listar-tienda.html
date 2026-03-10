@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h2 class="mb-0">Lista de tiendas</h2>
+
+      <button type="button" class="btn btn-success" routerLink="/guardarTienda">
+        + Nueva tienda
+      </button>
+    </div>
+
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Teléfono</th>
+              <th>Email</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @for (tienda of tiendas; track tienda.idTienda) {
+              <tr>
+                <td>{{ tienda.idTienda }}</td>
+                <td>{{ tienda.nombre }}</td>
+                <td>{{ tienda.telefono }}</td>
+                <td>{{ tienda.email }}</td>
+                <td>
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-info" [routerLink]="['/editarTienda', tienda.idTienda]">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-dark" (click)="eliminar(tienda.idTienda)">
+                      <i class="bi bi-trash3-fill"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            } @empty {
+              <tr>
+                <td colspan="5" style="text-align:center;">No existen registros</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

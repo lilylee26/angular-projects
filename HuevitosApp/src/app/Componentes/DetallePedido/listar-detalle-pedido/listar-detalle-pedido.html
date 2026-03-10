@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h2 class="mb-0">Lista de Detalle Pedido</h2>
+
+      <button type="button" class="btn btn-primary" (click)="irGuardar()">
+        Nuevo Detalle
+      </button>
+    </div>
+
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID DETALLE</th>
+              <th>ID PEDIDO</th>
+              <th>ID PRODUCTO</th>
+              <th>CANTIDAD</th>
+              <th>PRECIO UNITARIO</th>
+              <th>TIENDA ID</th>
+              <th>ACCIONES</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @for (d of detalles; track d.idDetalle) {
+            <tr>
+              <td>{{d.idDetalle}}</td>
+              <td>{{d.idPedido}}</td>
+              <td>{{d.idProducto}}</td>
+              <td>{{d.cantidad}}</td>
+              <td>{{d.precioUnitario}}</td>
+              <td>{{d.tiendaId}}</td>
+
+              <td>
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-info" (click)="editar(d.idDetalle)">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-dark" (click)="eliminar(d.idDetalle)">
+                    <i class="bi bi-trash3-fill"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            } @empty {
+            <tr>
+              <td colspan="7" style="text-align:center;">No existen registros</td>
+            </tr>
+            }
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

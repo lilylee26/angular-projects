@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h2 class="mb-0">Lista de Pagos</h2>
+
+      <button type="button" class="btn btn-primary" (click)="irGuardar()">
+        Nuevo Pago
+      </button>
+    </div>
+
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>ID PEDIDO</th>
+              <th>TIENDA ID</th>
+              <th>MÉTODO</th>
+              <th>FECHA</th>
+              <th>MONTO</th>
+              <th>ESTADO</th>
+              <th>ACCIONES</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @for (p of pagos; track p.idPago) {
+            <tr>
+              <td>{{p.idPago}}</td>
+              <td>{{p.idPedido}}</td>
+              <td>{{p.tiendaId}}</td>
+              <td>{{p.metodo}}</td>
+              <td>{{p.fechaPago}}</td>
+              <td>{{p.monto}}</td>
+              <td>{{p.estado}}</td>
+
+              <td>
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-info" (click)="editar(p.idPago)">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-dark" (click)="eliminar(p.idPago)">
+                    <i class="bi bi-trash3-fill"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            } @empty {
+            <tr>
+              <td colspan="8" style="text-align:center;">No existen registros</td>
+            </tr>
+            }
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

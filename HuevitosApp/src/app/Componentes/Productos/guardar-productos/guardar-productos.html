@@ -1,0 +1,66 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+
+      <div class="card shadow-sm">
+        <div class="card-header bg-dark text-white">
+          <h4 class="mb-0">Guardar Producto</h4>
+          <small class="text-white-50">Ingresa los datos para registrar un producto</small>
+        </div>
+
+        <div class="card-body">
+          <form (ngSubmit)="guardar()" #f="ngForm">
+
+            <div class="row g-3">
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" name="nombre" [(ngModel)]="producto.nombre"
+                  placeholder="Ej: Laptop" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">Precio</label>
+                <input type="number" class="form-control" name="precio" [(ngModel)]="producto.precio"
+                  placeholder="Ej: 1500" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">Stock</label>
+                <input type="number" class="form-control" name="stock" [(ngModel)]="producto.stock" placeholder="Ej: 10"
+                  required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">Tienda ID</label>
+                <input type="number" class="form-control" name="tiendaId" [(ngModel)]="producto.tiendaId"
+                  placeholder="Ej: 1" required />
+              </div>
+
+              <div class="col-12">
+                <label class="form-label">Descripción</label>
+                <input type="text" class="form-control" name="descripcion" [(ngModel)]="producto.descripcion"
+                  placeholder="Ej: Producto de prueba" required />
+              </div>
+
+            </div>
+
+            <hr class="my-4">
+
+            <div class="d-flex gap-2 justify-content-end">
+              <button type="button" class="btn btn-outline-secondary" (click)="cancelar()">
+                Cancelar
+              </button>
+
+              <button type="submit" class="btn btn-primary" [disabled]="f.invalid">
+                Guardar
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

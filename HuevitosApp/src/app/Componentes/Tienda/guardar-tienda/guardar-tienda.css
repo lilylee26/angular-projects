@@ -1,0 +1,10 @@
+.container { padding: 20px; }
+.card { border: 1px solid #333; border-radius: 8px; max-width: 700px; margin: auto; }
+.card-header { background: #444; color: #fff; padding: 12px; }
+.card-body { padding: 15px; }
+.form-group { margin-bottom: 12px; }
+.form-control { width: 100%; padding: 8px; }
+.acciones { display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px; }
+.btn { padding: 8px 14px; border: none; cursor: pointer; border-radius: 6px; }
+.btn-primary { background: #2c3e50; color: white; }
+.btn-secondary { background: #bdc3c7; }
